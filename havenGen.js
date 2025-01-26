@@ -1,11 +1,5 @@
 // Function to generate a random name
 function generateName() {
-  const randomIndexA = Math.floor(Math.random() * firstName.length);
-  const randomIndexB = Math.floor(Math.random() * secondName.length);
-
-  const part1 = firstName[randomIndexA];
-  const part2 = secondName[randomIndexB];
-
   // Example lists of names
   const firstName = [
     "Steam",
@@ -53,7 +47,14 @@ function generateName() {
     "ridge",
     "hollow",
   ];
-  const randomName = generateName(part1, part2);
+
+  const randomIndexA = Math.floor(Math.random() * firstName.length);
+  const randomIndexB = Math.floor(Math.random() * secondName.length);
+
+  const part1 = firstName[randomIndexA];
+  const part2 = secondName[randomIndexB];
+
+  const randomName = `${part1}${part2}`;
 
   document.getElementById("havenName").innerHTML = randomName;
 }
